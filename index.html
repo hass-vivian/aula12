@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>:: Aula 12 ♥ ::</title>
+</head>
+<body>
+    <header>
+        <div class="header_logo">
+            <img src="Imagens/1046283.png" alt="Calculadora">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li>Matemática</li>
+                <li>Fórmulas</li>
+                <li>Jogos</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="fonte_h1">DOM - Document Object Model</h1>
+        <div id="div01" class="content">
+            <input type="number" name="txt01" id="txt01" class="txt">
+            <input type="number" name="txt02" id="txt02" class="txt">
+            <input type="button" value="+" id="btnSomar" class="txt">
+            <input type="button" value="-" id="btnDiminuir" class="txt">
+            <input type="button" value="*" id="btnMultiplicar" class="txt">
+            <input type="button" value="/" id="btnDividir" class="txt">
+            <input type="reset" value="Limpar" id="btnLimpar" class="txt">
+            <div id="resultado" class="col-12">
+                Resultado
+            </div>
+        </div>
+    </main>
+
+
+    <footer>Vívian.Hass - Elas na Tech 2023 ♥</footer>
+
+
+    <script>
+        var btnSomar = document.getElementById('btnSomar');
+    btnSomar.addEventListener('click', somar);
+
+        var btnDiminuir = document.getElementById('btnDiminuir');
+    btnDiminuir.addEventListener('click', diminuir);
+
+        var btnMultiplicar = document.getElementById('btnMultiplicar');
+    btnMultiplicar.addEventListener('click', multiplicar);
+
+        var btnDividir = document.getElementById('btnDividir');
+    btnDividir.addEventListener('click', dividir);
+
+    var btnLimpar = document.getElementById('btnLimpar');
+    btnLimpar.addEventListener('click', limpar);
+
+
+    function somar() {
+    var c1 = document.getElementById('txt01');
+    var c2 = document.getElementById('txt02');
+    var result = document.getElementById('resultado');
+
+    var num1 = parseFloat(c1.value);
+    var num2 = parseFloat(c2.value);
+
+    var resultado = num1 + num2;
+    result.innerText = "🤓 A soma é: " + resultado.toFixed(2);
+}
+
+function diminuir() {
+    var c1 = document.getElementById('txt01');
+    var c2 = document.getElementById('txt02');
+    var result = document.getElementById('resultado');
+
+    var num1 = parseFloat(c1.value);
+    var num2 = parseFloat(c2.value);
+
+    var resultado = num1 - num2;
+    result.innerText = "🤓 A subtração é: " + resultado.toFixed(2);
+}
+
+function multiplicar() {
+    var c1 = document.getElementById('txt01');
+    var c2 = document.getElementById('txt02');
+    var result = document.getElementById('resultado');
+
+    var num1 = parseFloat(c1.value);
+    var num2 = parseFloat(c2.value);
+
+    var resultado = num1 * num2;
+    result.innerText = "🤓 A multiplicação é: " + resultado.toFixed(2);
+}
+
+function dividir() {
+    var c1 = document.getElementById('txt01');
+    var c2 = document.getElementById('txt02');
+    var result = document.getElementById('resultado');
+
+    var num1 = parseFloat(c1.value);
+    var num2 = parseFloat(c2.value);
+
+    var resultado = num1 / num2;
+    result.innerText = "🤓 A divisão é: " + resultado.toFixed(2);
+}
+function limpar() {
+        document.getElementById('txt01').value = "";
+    document.getElementById('txt02').value = "";
+    document.getElementById('resultado').innerText = "Resultado";
+}
+
+    </script>
+    
+</body>
+</html>
